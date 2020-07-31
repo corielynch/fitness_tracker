@@ -1,0 +1,28 @@
+{
+  "name": "d",
+  "version": "1.0.0",
+  "description": "A dynamic workout tracker that uses a Mongo database with a Mongoose schema and handles routes with Express. The app tracks the name, type, weight, sets, reps, distance and duration of exercise.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "watch": "nodemon server.js",
+    "seed": "node seeders/seed.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.9.26",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/corielynch/workout_tracker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/corielynch/workout_tracker/issues"
+  },
+  "homepage": "https://github.com/corielynch/workout_tracker#readme"
+}
