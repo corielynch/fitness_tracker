@@ -1,20 +1,29 @@
 // Dependencies
 // ============
-var express        = require('express');
-var mongoose 			 = require('mongoose');
+const express        = require('express');
+const mongoose 			 = require('mongoose');
 
-// Setting up port and requiring models for syncing
-var db = require("./models");
+const PORT = process.env.PORT || 5000;
 
 // Instantiate our app
-var app = express();
+const app = express();
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+app.use(express.static("public"));
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/budget", {
   useNewUrlParser: true,
   useFindAndModify: false
 });
+
+// routes
+app.use(require("./routes"));
+
+app.listen(PORT, () => {
+  console.log(`App running on port ${PORT}!`);
+});
+
 
 module.exports = mongoose.connection
